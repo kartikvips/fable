@@ -16,9 +16,10 @@ import Modal from './modal/modal';
 const App = () => (
     <div>
         <Modal />
-   
+
         <header>
             <div className = "fakediv"></div>
+
             <Link to="/" className="header-link">
                 <h1 className = "logo">fable</h1>
             </Link>
