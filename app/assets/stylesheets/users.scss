@@ -1,3 +1,201 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+    width: 97%;
+}
+
+.modal-background {
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     right: 0;
+     left: 0;
+     background: rgba(255, 255, 255, 0.65);
+     z-index: 10;
+ }
+
+.modal-child {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+.login-form-container {
+    //  display: flex;
+    //  justify-content: center;
+     background: #D7EFEE;
+     padding: 50px;
+     align-items: center;
+     position: relative;
+ }
+
+.signup-form-container {
+      // display: flex;
+      // justify-content: center;
+      background: #E8F3EC;
+      padding: 50px;
+      align-items: center;
+      position: relative;
+  }
+
+.close-x{
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 25px;
+    padding: 15px; 
+    color: gray;
+    font-weight: 100;
+}
+.close-x:hover{
+    cursor: pointer;
+    color: black;
+}
+.otra{
+    display: flex;
+    justify-content: center;
+
+}
+ .login-form {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .login-input {
+    //  margin-left: 20px;
+     text-align: center;
+     width: 290px;
+     height: 34px;
+     padding: 0px 5px; 
+     border: none;
+     background: none;
+     border-bottom: 0.2px solid rgba(0, 0, 0, 0.68);
+     font-size: 17px;
+ }
+
+ .login-input::placeholder {
+     font-size: 14px;
+ }
+
+ .login-input:focus {
+     outline: none;
+ }
+
+
+ .login-form-box {
+    //  outline: 1px solid black;
+     padding: 20px;
+    //  display: flex;
+    //  justify-content: space-between;
+     position: relative;
+ }
+
+ .form-title {
+    //  font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+     font-weight: 500;
+     font-size: 32px;
+     line-height: 36px !important;
+     transform: translateY(-2px);
+     text-align: center;
+ }
+
+ .session-submit{
+     background: rgba(0, 0, 0, .84);
+     border-color: rgba(0, 0, 0, .84);
+     color: rgba(255, 255, 255, .97);
+    //  width: 62px;
+     height: 37px;
+     padding: 0px 18px;
+     margin: 15px 0px;
+    line-height: 37px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-weight: 100;
+
+ }
+
+header{
+    display: flex;
+    // position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-link{
+    // position: absolute;
+    // top: 25%;
+    // left: 50%;
+        font-size: 40px;
+        font-weight: 700;
+        text-decoration: none;
+        color: black;
+}
+
+.logo{
+    align-self: center;
+
+}
+
+.switch-two{
+    background:none !important;
+    font: inherit;
+    /*border is optional*/
+    color: #03a87c;
+    border:1px solid #03a87c;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    align-self: flex-end;
+}
+.switch-three {
+    background: #03a87c;
+    font: inherit;
+    /*border is optional*/
+    color: white;
+    border: 1px solid #03a87c;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    align-self: flex-end;
+}
+
+.switch-one{
+    background:none !important;
+    font: inherit;
+    /*border is optional*/
+    border: 0;
+    color: #03a87c;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+    align-self: flex-end;
+}
+
+.switch-two:hover{
+    color: #16926E;
+}
+
+.switch-three:hover {
+    background: #16926E;
+}
+
+.form-switch {
+    background: none !important;
+    color: #03a87c;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    /*border is optional*/
+    // border-bottom: 1px solid #444;
+    cursor: pointer;
+}

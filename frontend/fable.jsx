@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
+
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+    
+    console.log("hello");
+
+
     const root = document.getElementById('root');
-    ReactDOM.render(<h1>PLZ WORK </h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
