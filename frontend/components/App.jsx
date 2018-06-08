@@ -25,12 +25,14 @@ const App = () => (
             </Link>
             <GreetingContainer />
         </header>
-        {/* <Switch> */}
+        <Switch>
           
             {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} /> */}
             {/* <Route path="/benches/:benchId" component={BenchShowContainer} /> */}
             {/* <Route exact path="/" component={SearchContainer} /> */}
-        {/* </Switch> */}
+            <Redirect to='/' />
+        </Switch>
+
     </div>
 );
 
