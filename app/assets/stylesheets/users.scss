@@ -122,12 +122,19 @@ body{
 
  }
 
+.fakediv{
+    width: 30%;
+}
+
+
+
 header{
     display: flex;
     // position: relative;
     justify-content: space-between;
     align-items: center;
-}
+    // flex-direction: row;
+}    
 
 .header-link{
     // position: absolute;
@@ -137,11 +144,29 @@ header{
         font-weight: 700;
         text-decoration: none;
         color: black;
+        margin: 0 auto;
 }
 
 .logo{
-    align-self: center;
+    // align-self: center;
 
+}
+
+.header-group{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-signup {
+    width: 30%;
+    display: flex;
+    // align-items: center;
+    justify-content: flex-end;
+}
+
+.login-signup * {
+    outline:none;
 }
 
 .switch-two{
@@ -154,7 +179,7 @@ header{
     padding: 5px 16px;
     font-size: 16px;
     border-radius: 4px;
-    align-self: flex-end;
+    
 }
 .switch-three {
     background: #03a87c;
@@ -166,7 +191,7 @@ header{
     padding: 5px 16px;
     font-size: 16px;
     border-radius: 4px;
-    align-self: flex-end;
+    
 }
 
 .switch-one{
@@ -178,7 +203,7 @@ header{
     cursor: pointer;
     padding: 0;
     font-size: 16px;
-    align-self: flex-end;
+    
 }
 
 .switch-two:hover{

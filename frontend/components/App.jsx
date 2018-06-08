@@ -18,7 +18,7 @@ const App = () => (
         <Modal />
    
         <header>
-            <div></div>
+            <div className = "fakediv"></div>
             <Link to="/" className="header-link">
                 <h1 className = "logo">fable</h1>
             </Link>
