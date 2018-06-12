@@ -1,0 +1,93 @@
+// Place all the styles related to the api/articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article-show{
+    padding: 20px 0;
+}
+
+.article-body{
+    padding-top: 50px;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: elevate-display-font,
+    medium-marketing-display-font,
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif !important;
+}
+
+.article-show-img{
+    height: 400px;
+    object-fit: cover;
+}
+
+.article-author-avatar{
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.article-author{
+    display: flex;
+}
+
+.article-author p {
+    margin: 0;
+}
+
+.article-title{
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.article-hook{
+    margin: 20px 0 24px 0;
+    color: rgba(0, 0, 0, .54);
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+.article-author-info{
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.84);
+    font-weight: 400;
+    font-family: medium-content-sans-serif-font,
+    "Lucida Grande",
+    "Lucida Sans Unicode",
+    "Lucida Sans",
+    Geneva,
+    Arial,
+    sans-serif;
+}
+
+.article-date{
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.article-article{
+    padding-top: 30px;
+    color: rgba(0, 0, 0, 0.74);
+    font-size: 21px;
+    font-weight: 400;
+    font-family: medium-content-serif-font,
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+    line-height: 33.18px;
+    text-rendering: optimizeLegibility;
+    word-break: break-word;
+    word-wrap: break-word;
+    letter-spacing: -.003em;
+}
+

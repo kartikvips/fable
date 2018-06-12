@@ -8,9 +8,11 @@ import {
     HashRouter
 } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
+import IndexContainer from './index/index_container';
+import ArticleShowContainer from './article/article_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import SignUpFormContainer from './session_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
+// import SignUpFormContainer from './session_form/signup_form_container';
+// import LogInFormContainer from './session_form/login_form_container';
 import Modal from './modal/modal';
 
 const App = () => (
@@ -26,10 +28,8 @@ const App = () => (
             <GreetingContainer />
         </header>
         <Switch>
-          
-            {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} /> */}
-            {/* <Route path="/benches/:benchId" component={BenchShowContainer} /> */}
-            {/* <Route exact path="/" component={SearchContainer} /> */}
+            <Route exact path="/" component={IndexContainer} />
+            <Route exact path='/articles/:id' component={ArticleShowContainer} />
             <Redirect to='/' />
         </Switch>
 

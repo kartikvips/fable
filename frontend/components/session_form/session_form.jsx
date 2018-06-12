@@ -47,14 +47,14 @@ class SessionForm extends React.Component {
                 <div className="signup-form-container">
                     <div onClick={this.props.closeModal} className="close-x">&times;</div>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
-                        <h1 class = "form-title">Join fable.</h1>
+                        <h1 className = "form-title">Join fable.</h1>
                      <br />
                      
                         
                         {this.renderErrors()}
                         <div className="login-form">
                             <br />
-                            <label for="firstname">
+                            <label>
                             <input type="text"
                                     value={this.state.firstname}
                                     onChange={this.update('firstname')}
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
                             </label>
 
                             <br />
-                            <label for="lastname">
+                            <label>
                             <input type="text"
                                     value={this.state.lastname}
                                     onChange={this.update('lastname')}
@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
                             </label>
 
                             <br />
-                            <label for="email">
+                            <label>
                             <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')}
@@ -83,7 +83,7 @@ class SessionForm extends React.Component {
                                 />
                             </label>
                             <br />
-                            <label for="password">
+                            <label>
                             <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
@@ -106,12 +106,12 @@ class SessionForm extends React.Component {
                  <div className="login-form-container">
                      <div onClick={this.props.closeModal} className="close-x">&times;</div>
                      <form onSubmit={this.handleSubmit} className="login-form-box">
-                         <h1 class="form-title">Sign in with email</h1>
+                         <h1 className="form-title">Sign in with email</h1>
                      <br />
                          {this.renderErrors()}
                          <div className="login-form">
                              <br />
-                             <label for="email">
+                             <label>
                             <input type="text"
                                      value={this.state.email}
                                      onChange={this.update('email')}
@@ -120,7 +120,7 @@ class SessionForm extends React.Component {
                                  />
                              </label>
                              <br />
-                             <label for="password">
+                             <label>
                             <input type="password"
                                      value={this.state.password}
                                      onChange={this.update('password')}

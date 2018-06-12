@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
-  def require_logged_in
+  def require_login
     unless current_user
-      render json: { base: ['invalid credentials'] }, status: 401
+      render json: { base: ['Invalid credentials'] }, status: 401
     end
   end
 

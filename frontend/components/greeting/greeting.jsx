@@ -19,7 +19,7 @@ const Greeting = ({ currentUser, logout, openModal, demologin }) => {
             <h2 className="header-name">Hi, {currentUser.firstname} {currentUser.lastname}!</h2>
             &nbsp;&nbsp;
             <div className = "imgcontainer">
-                <img className="profile-pic" src="http://cdn3-www.dogtime.com/assets/uploads/gallery/west-highland-white-terrier-dogs-and-puppies/thumbs/thumbs_west-highland-white-terrier-dogs-puppies-2.jpg" />
+                <img className="profile-pic" src={currentUser.img_url} />
             </div>
             {/* <Dropdown /> */}
             <button className="switch-one" onClick={logout}>Log Out</button>

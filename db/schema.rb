@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180608205225) do
+ActiveRecord::Schema.define(version: 20180612180128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,50 @@ ActiveRecord::Schema.define(version: 20180608205225) do
     t.datetime "publish_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hook", null: false
+    t.string "img_url"
     t.index ["title"], name: "index_articles_on_title", unique: true
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_bookmarks_on_article_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "article_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "publish_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "body", null: false
+    t.string "img_url"
+    t.index ["article_id"], name: "index_comments_on_article_id"
+    t.index ["publish_date"], name: "index_comments_on_publish_date"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.string "follower_id", null: false
+    t.string "followee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followee_id"], name: "index_follows_on_followee_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_likes_on_article_id"
+    t.index ["user_id", "article_id"], name: "index_likes_on_user_id_and_article_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,6 +76,7 @@ ActiveRecord::Schema.define(version: 20180608205225) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["firstname"], name: "index_users_on_firstname"
     t.index ["lastname"], name: "index_users_on_lastname"

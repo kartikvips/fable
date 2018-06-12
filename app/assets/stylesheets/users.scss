@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-    width: 97%;
+    // width: 97%;
+    max-width: 1200px;
+    min-width: 900px;
+    margin: 0 auto;
 }
 
 .login-form-container {
@@ -249,7 +252,8 @@ header{
 .profile-pic{
     width: 32px;
     height: 32px;
-    border-radius: 50%;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .imgcontainer{
