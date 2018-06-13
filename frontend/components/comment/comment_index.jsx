@@ -11,7 +11,9 @@ class CommentIndex extends React.Component {
     }
 
     render() {
+        
         const comments = this.props.comments.reverse().map((comment, i) => {
+
             return (
                 <CommentIndexItem
                     key={comment.id}
@@ -19,6 +21,7 @@ class CommentIndex extends React.Component {
                 />
             );
         });
+        // debugger;
         return (
             <div className='comment-container'>
                 {comments}

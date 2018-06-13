@@ -28,8 +28,8 @@ class UserShow extends React.Component {
         const monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Octtober", "November", "December"];
       
      
-
-        if(!!this.props.user){
+        // if(!!this.props.user && !!this.props.user.articles){
+        if(!!this.props.user && !!this.props.user.articles){
                 const articles = this.props.user.articles.map((article, i) => {
                     return (
                         <div className="profile-article-holder" key={article.id}>
@@ -58,7 +58,7 @@ class UserShow extends React.Component {
                     <div className = "profile-header">
                         <div className = "profile-header-info">
                             <h1 className="profile-name">{this.props.user.firstname} {this.props.user.lastname}</h1>
-                            <p className="member-since">fable member since {monthsFull[this.props.user.month+1]} {this.props.user.year}</p>
+                            <p className="member-since">fable member since {monthsFull[this.props.user.month-1]} {this.props.user.year}</p>
                         </div>
                         <img className="profile-main-picture" src={this.props.user.img_url}/>
                     </div>
@@ -69,6 +69,20 @@ class UserShow extends React.Component {
         } else {
             return(<div>Loading...</div>);
         }
+    // }else{
+    //         return (
+    //             <div className="profile">
+    //                 <div className="profile-header">
+    //                     <div className="profile-header-info">
+    //                         <h1 className="profile-name">{this.props.user.firstname} {this.props.user.lastname}</h1>
+    //                         <p className="member-since">fable member sincee {monthsFull[this.props.user.month - 1]} {this.props.user.year}</p>
+    //                     </div>
+    //                     <img className="profile-main-picture" src={this.props.user.img_url} />
+    //                 </div>
+    //                 <p className="member-since">{this.props.user.firstname} {this.props.user.lastname} hasn’t been active on fable yet. Check back later to see their stories.</p>
+
+    //             </div>);
+        // }
 
 
 

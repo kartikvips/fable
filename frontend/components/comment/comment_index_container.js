@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger;
     return {
         comments: Object.values(state.entities.comments).filter(comment => parseInt(comment.article_id) === parseInt(ownProps.match.params.id)),
         currentUser: state.session.currentUser
