@@ -1,9 +1,8 @@
 import React from 'react';
 import { withrouter } from 'react-router';
 import { Link } from 'react-router-dom';
-
-// import CommentFormContainer from '../comment/comment_form_container';
-// import CommentIndexContainer from '../comment/comment_index_container';
+import CommentFormContainer from '../comment/comment_form_container';
+import CommentIndexContainer from '../comment/comment_index_container';
 
 class ArticleShow extends React.Component {
     constructor(props) {
@@ -54,6 +53,15 @@ class ArticleShow extends React.Component {
                         <div className="article-article">
                             {article.body}
                         </div>
+                    
+                    <div className="comments-div">
+                        <div className="comments-form-div">
+                            <CommentFormContainer />                       
+                        </div>
+                        <div className="comemnts-view-div">
+                            <CommentIndexContainer />
+                        </div>
+                    </div>
                     </div>
                 </div>
             );

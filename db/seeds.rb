@@ -141,3 +141,23 @@ Then Commander Poe Dameron, the rebellious rebel, though the most loyal to his c
 When the three are brought together in hopes of saving their cause, they fly right into a war none of them are prepared to fight. 
 
 But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user3.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1472457974886-0ebcd59440cc?ixlib=rb-0.3.5&s=bb88d48217e833ea149c2984462431ec&auto=format&fit=crop&w=1498&q=80"})
+
+comment1 = Comment.create(article_id: 1, user_id: 1, publish_date: Time.now, body: "Commentttttt")
+
+comment2 = Comment.create(article_id: 1, user_id: 2, publish_date: Time.now, body: "Commentttttt22")
+
+comment3 = Comment.create(article_id: 1, user_id: 3, publish_date: Time.now, body: "Commentttttt33")
+
+comment4 = Comment.create(article_id: 1, user_id: 4, publish_date: Time.now, body: "Commentttttt44")
+
+comment5 = Comment.create(article_id: 1, user_id: 5, publish_date: Time.now, body: "Commentttttt55")
+
+comment6 = Comment.create(article_id: 2, user_id: 1, publish_date: Time.now, body: "Commentttttt")
+
+comment7 = Comment.create(article_id: 2, user_id: 2, publish_date: Time.now, body: "Commentttttt22")
+
+comment8 = Comment.create(article_id: 2, user_id: 3, publish_date: Time.now, body: "Commentttttt33")
+
+comment9 = Comment.create(article_id: 2, user_id: 4, publish_date: Time.now, body: "Commentttttt44")
+
+comment10 = Comment.create(article_id: 2, user_id: 5, publish_date: Time.now, body: "Commentttttt55")
