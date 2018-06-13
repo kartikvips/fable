@@ -15,7 +15,7 @@ const TopContainer = ({ articles }) => {
                         <Link to={`/articles/${article.id}`}>
                         <p className = "index-title">{article.title}</p>
                         <p className = "index-hook">{article.hook}...</p></Link>
-                        <p className = "index-author">{article.user_firstname} {article.user_lastname}</p>
+                        <Link to={`/users/${article.user_id}`}><p className = "index-author">{article.user_firstname} {article.user_lastname}</p></Link>
                         <p className = "date">{months[article.month-1]} {article.day}</p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ const TopContainer = ({ articles }) => {
                     <div className = "mid-arts">
                         <Link to={`/articles/${article.id}`}><p className="mid-title">{article.title}</p>       <p className = "index-mid-hook">{article.hook.slice(0,40)}...</p>
                         </Link>
-                        <p className = "index-author">{article.user_firstname} {article.user_lastname}</p>
+                        <Link to={`/users/${article.user_id}`}><p className = "index-author">{article.user_firstname} {article.user_lastname}</p></Link>
                         <p className = "date">{months[article.month-1]} {article.day}</p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const TopContainer = ({ articles }) => {
                     <div className="right-art">
                         <Link to={`/articles/${article.id}`}><p className="index-title">{article.title}</p>
                         <p className="index-hook">{article.hook.slice(0,50)}...</p></Link>
-                        <p className="index-author">{article.user_firstname} {article.user_lastname}</p>
+                        <Link to={`/users/${article.user_id}`}><p className="index-author">{article.user_firstname} {article.user_lastname}</p></Link>
                         <p className="date">{months[article.month - 1]} {article.day}</p>
                     </div>
                 </div>

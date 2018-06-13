@@ -1,3 +1,103 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile{
+    width: 680px;
+    padding: 0 24px;
+    margin: 0 auto;
+    font-family: medium-content-sans-serif-font,
+    "Lucida Grande",
+    "Lucida Sans Unicode",
+    "Lucida Sans",
+    Geneva,
+    Arial,
+    sans-serif;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.profile-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, .20);
+}
+
+.profile-main-picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.profile-article-holder{
+    border: 1px solid rgba(0, 0, 0, .20);
+    padding: 23px 0;
+    margin-bottom: 30px;
+}
+
+.profile-name{
+    font-size: 28px;
+    font-weight: 600;
+    color:rgba(0, 0, 0, 0.78);
+}
+
+.member-since{
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+}
+
+.profile-article-img{
+    width: 40px;
+    height: 40px; 
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.profile-profile-div{
+    padding: 0 20px;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.profile-article-image{
+    padding: 0 20px;
+    width: 640px;
+    height: 190px;
+    object-fit: cover;
+}
+
+.profile-author {
+    color: rgba(0, 0, 0, 0.74);
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.profile-author:hover {
+    text-decoration: underline;
+}
+
+.profile-article-info{
+    margin-left: 10px;
+}
+
+.profile-article-title {
+    margin-bottom: none;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 26px;
+    padding-left: 20px;
+    color: rgba(0, 0, 0, 0.80);
+}
+
+.profile-article-hook {
+    padding-left: 20px;
+    margin: 0;
+    // margin-top: 10px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, .54) !important;
+    margin-bottom: 20px;
+}

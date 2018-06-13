@@ -46,7 +46,7 @@ class ArticleShow extends React.Component {
                             <div className = "article-author">
                                 <img className = "article-author-avatar" src = {article.userImgUrl} />
                                 <div className = "article-author-info">
-                                    <p className = "article-author-name">{article.user_firstname} {article.user_lastname}</p>
+                                    <Link to={`/users/${article.user_id}`}><p className = "article-author-name">{article.user_firstname} {article.user_lastname}</p></Link>
                                     <p className = "article-date">{months[article.month+1]} {article.day}</p>
                                 </div>
                             </div>

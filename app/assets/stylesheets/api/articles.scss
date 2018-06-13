@@ -31,6 +31,10 @@
     border-radius: 100%;
 }
 
+.article-author-name:hover{
+    text-decoration: underline;
+}
+
 .article-author{
     display: flex;
 }

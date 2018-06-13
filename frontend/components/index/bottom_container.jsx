@@ -14,7 +14,7 @@ const BottomContainer = ({ articles }) => {
                     <div className="mid-arts">
                         <Link to={`/articles/${article.id}`}><p className="bottom-mid-title">{article.title}</p>
                         <p className="index-mid-hook">{article.hook.slice(0, 80)}...</p></Link>
-                        <p className="index-author">{article.user_firstname} {article.user_lastname}</p>
+                        <Link to={`/users/${article.user_id}`}><p className="index-author">{article.user_firstname} {article.user_lastname}</p></Link>
                         <p className="date">{months[article.month - 1]} {article.day}</p>
                     </div>
                     <Link to={`/articles/${article.id}`}><img src={article.img_url} /></Link>
@@ -29,7 +29,7 @@ const BottomContainer = ({ articles }) => {
                         </div>
                         <div className="bottom-right-arts">
                             <Link to={`/articles/${article.id}`}><p className="bottom-right-title">{article.title}</p></Link>
-                            <p className="index-author">{article.user_firstname} {article.user_lastname}</p>
+                            <Link to={`/users/${article.user_id}`}><p className="index-author">{article.user_firstname} {article.user_lastname}</p></Link>
                             <p className="date">{months[article.month - 1]} {article.day}</p>
                         </div>
                     

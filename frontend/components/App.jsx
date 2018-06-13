@@ -10,6 +10,7 @@ import {
 import GreetingContainer from './greeting/greeting_container';
 import IndexContainer from './index/index_container';
 import ArticleShowContainer from './article/article_show_container';
+import UserShowContainer from './user/user_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import SignUpFormContainer from './session_form/signup_form_container';
 // import LogInFormContainer from './session_form/login_form_container';
@@ -30,6 +31,7 @@ const App = () => (
         <Switch>
             <Route exact path="/" component={IndexContainer} />
             <Route exact path='/articles/:id' component={ArticleShowContainer} />
+            <Route exact path='/users/:id' component={UserShowContainer} />
             <Redirect to='/' />
         </Switch>
 

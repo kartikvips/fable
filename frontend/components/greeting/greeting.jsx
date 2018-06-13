@@ -19,7 +19,7 @@ const Greeting = ({ currentUser, logout, openModal, demologin }) => {
             <h2 className="header-name">Hi, {currentUser.firstname} {currentUser.lastname}!</h2>
             &nbsp;&nbsp;
             <div className = "imgcontainer">
-                <img className="profile-pic" src={currentUser.img_url} />
+                <Link to={`/users/${currentUser.id}`}><img className="profile-pic" src={currentUser.img_url} /></Link>
             </div>
             {/* <Dropdown /> */}
             <button className="switch-one" onClick={logout}>Log Out</button>

@@ -11,6 +11,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show 
+    @user = User.find(params[:id])
+
+    if @user 
+      render 'api/users/profile'
+    else 
+      render json: ["User doesn't exist"], status: 401
+    end
+  end 
+
   private
 
   def user_params
