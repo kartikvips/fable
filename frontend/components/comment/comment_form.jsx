@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
+import ReactQuill from 'react-quill';
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class CommentForm extends React.Component {
             body: '', article_id: this.props.match.params.id
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     update(field) {
@@ -16,6 +18,10 @@ class CommentForm extends React.Component {
                 [field]: e.target.value
             });
         };
+    }
+
+    handleChange(value) {
+        this.setState({ body: value });
     }
 
     componentWillUnmount() {
@@ -57,7 +63,7 @@ class CommentForm extends React.Component {
             name = `${this.props.currentUser.firstname} ${this.props.currentUser.lastname}`;
         }
         return (
-            <div className="comment-form-label"><span>Responses</span>
+  
                 <div className='comment-form'>
                     <div className='comment-author'>
                         
@@ -68,10 +74,12 @@ class CommentForm extends React.Component {
                     </div>
                     {/* {this.renderErrors()} */}
                     <form className = "comment-form-form" onSubmit={this.handleSubmit}>
-                        <textarea className = "comment-textarea"
+                        {/* <textarea className = "comment-textarea"
                             value={this.state.body}
                             onChange={this.update('body')}
-                        />
+                        /> */}
+                    <ReactQuill className ="comment-textarea" theme="bubble" value={this.state.body}
+                        onChange={this.handleChange} />
                         <br />
                         <input className="comment-submit"
                             type='submit'
@@ -79,7 +87,7 @@ class CommentForm extends React.Component {
                         />
                     </form>
                 </div>
-            </div>
+            
         );
     }
 }

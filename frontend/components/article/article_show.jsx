@@ -53,15 +53,16 @@ class ArticleShow extends React.Component {
                         <div className="article-article">
                             {article.body}
                         </div>
-                    
-                    <div className="comments-div">
-                        <div className="comments-form-div">
-                            <CommentFormContainer />                       
+                        <div className="comment-form-label">        <span>Responses</span>
+                            <div className="comments-div">
+                                <div className="comments-form-div">
+                                    <CommentFormContainer />                       
+                                </div>
+                                <div className="comemnts-view-div">
+                                    <CommentIndexContainer />
+                                </div>
+                            </div>
                         </div>
-                        <div className="comemnts-view-div">
-                            <CommentIndexContainer />
-                        </div>
-                    </div>
                     </div>
                 </div>
             );

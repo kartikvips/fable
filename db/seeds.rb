@@ -112,7 +112,7 @@ Then Commander Poe Dameron, the rebellious rebel, though the most loyal to his c
 
 When the three are brought together in hopes of saving their cause, they fly right into a war none of them are prepared to fight. 
 
-But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user2.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1472457974886-0ebcd59440cc?ixlib=rb-0.3.5&s=bb88d48217e833ea149c2984462431ec&auto=format&fit=crop&w=1498&q=80"})
+But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user2.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1486736065690-45e0655d038a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8417003192c1520308b460e9ae6ab4c4&auto=format&fit=crop&w=1350&q=80"})
 
 article8 = Article.create({title: "Revenge of the Bored", body: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil. 
 
@@ -126,7 +126,7 @@ Then Commander Poe Dameron, the rebellious rebel, though the most loyal to his c
 
 When the three are brought together in hopes of saving their cause, they fly right into a war none of them are prepared to fight. 
 
-But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user5.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1472457974886-0ebcd59440cc?ixlib=rb-0.3.5&s=bb88d48217e833ea149c2984462431ec&auto=format&fit=crop&w=1498&q=80"})
+But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user5.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1518331539918-7a2dbf839306?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1280787fdf193abf01005221316a1ba8&auto=format&fit=crop&w=1349&q=80"})
 
 article9 = Article.create({title: "Revenge of the Lazy", body: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil. 
 
@@ -140,7 +140,7 @@ Then Commander Poe Dameron, the rebellious rebel, though the most loyal to his c
 
 When the three are brought together in hopes of saving their cause, they fly right into a war none of them are prepared to fight. 
 
-But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user3.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1472457974886-0ebcd59440cc?ixlib=rb-0.3.5&s=bb88d48217e833ea149c2984462431ec&auto=format&fit=crop&w=1498&q=80"})
+But will they win? Will the First Order extinguish the spark? Or will their downfall come from something different..?", user_id: user3.id, publish_date: Time.now, hook: "The Resistance has been decimated. Our heroes have little hope. The galaxy is in turmoil.", img_url: "https://images.unsplash.com/photo-1518331717677-3d0374dcfcd5?ixlib=rb-0.3.5&s=5165b3c00259386fdbba5012648884be&auto=format&fit=crop&w=1349&q=80"})
 
 comment1 = Comment.create(article_id: 1, user_id: 1, publish_date: Time.now, body: "Commentttttt")
 

@@ -17,7 +17,14 @@ const CommentIndexItem = ({ comment, router, history }) => {
                 </div>
             </div>
             <div className='comment-body'>
-                {comment.body}
+                <table>
+                    <tbody>
+                        <tr>
+                            <td dangerouslySetInnerHTML={{ __html: comment.body }} />
+                        </tr>
+                    </tbody>
+                </table>
+   
             </div>
         </div>
     );

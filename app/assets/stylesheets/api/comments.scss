@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comments-div{
-    margin-top: 100px;
+    margin-top: 20px;
     width: 640px;
     // margin:auto;
 }
@@ -16,6 +16,7 @@
 }
 
 .comment-form-label{
+    margin-top: 100px;
     font-family: medium-content-sans-serif-font,
     -apple-system,
     BlinkMacSystemFont,
@@ -69,9 +70,9 @@
 .comment-textarea{
     border:none;
     width: 598px;
-    height: 160px;
+    // height: 160px;
     resize: none;
-    font-size: 14px;
+    // font-size: 14px;
 }
 
 .comment-textarea:focus{
@@ -149,7 +150,7 @@
 // }
 
 .comment-body{
-    font-size: 16px;
+    // font-size: 16px; 
     margin-top: 20px;
     margin-bottom: 20px;
     color: rgba(0, 0, 0, 0.84);
@@ -160,3 +161,24 @@
     Times,
     serif;
 }
+
+.comment-body h1{
+    font-size: 20px;
+}
+.comment-body h2{
+    font-size: 18px;
+}
+.comment-body p{
+    font-size: 16px;
+    margin: 0;
+}
+.comment-body blockquote{
+    font-size: 16px;
+    border-left: 5px solid rgba(0, 0, 0, 0.20);
+    padding-left: 15px;
+}
+
+.comment-body a{
+    text-decoration: underline;
+}
+

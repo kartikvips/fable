@@ -16,7 +16,8 @@ module.exports = {
                     presets: ['env', 'react']
                 }
             },
-        }]
+        }],
+        noParse: /node_modules\/quill\/dist/
     },
     devtool: 'source-map',
     resolve: {
