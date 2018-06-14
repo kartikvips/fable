@@ -32,12 +32,28 @@ class UserShow extends React.Component {
 
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         const monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Octtober", "November", "December"];
-      
-     
+
         // if(!!this.props.user && !!this.props.user.articles){
         if(!!this.props.user && !!this.props.user.articles){
             debugger;
                 const articles = this.props.user.articles.map((article, i) => {
+                    
+                    let id = this.props.currentUser ? this.props.currentUser.id : 0;
+                    const update = (artId) => {
+                        if (id === article.user_id) {
+                            debugger;
+                            return (
+                                <input className="article-update-button"
+                                    type='submit'
+                                    value='Update'
+                                    onClick={this.handleUpdate.bind(this, artId)}
+                                />
+                            );
+                        } else {
+                            return (<div></div>);
+                        }
+                    };
+
                     return (
                         <div className="profile-article-holder" key={article.id}>
                             <div className="profile-update-cont">
@@ -51,11 +67,7 @@ class UserShow extends React.Component {
                                     </div>
                             
                                 </div>
-                                <input className="article-update-button"
-                                    type='submit'
-                                    value='Update'
-                                    onClick={this.handleUpdate.bind(this, article.id)}
-                                />
+                                {update(article.id)}
                             </div>
                             <Link to={`/articles/${article.id}`}><img className="profile-article-image" src={article.img_url} />
                             </Link>
