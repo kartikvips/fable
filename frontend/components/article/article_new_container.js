@@ -8,9 +8,15 @@ import {
 import ArticleNew from './article_new';
 
 
-const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.session.currentUser
-});
+const mapStateToProps = (state, ownProps) => {
+    const keys = Object.keys(state.entities.articles);
+
+    return {
+    currentUser: state.session.currentUser,
+    articleId: keys[keys.length-1]
+};
+
+};
 
 
 const mapDispatchToProps = dispatch => ({

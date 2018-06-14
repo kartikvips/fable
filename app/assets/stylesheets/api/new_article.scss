@@ -1,0 +1,110 @@
+.editor-main{
+    width: 740px;
+    margin: auto;
+    padding: 20px 0;
+    font-family: medium-content-sans-serif-font,
+    "Lucida Grande",
+    "Lucida Sans Unicode",
+    "Lucida Sans",
+    Geneva,
+    Arial,
+    sans-serif !important;
+}
+
+.editor-author-info{
+    display: flex;
+
+}
+
+.editor-user-img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.editor-author-name{
+    padding-left: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.editor-author-name *{
+    margin: 0px;
+}
+
+.editor-username{
+    color: rgba(0, 0, 0, 0.84);
+    font-size: 14px;
+}
+
+.editor-draftt{
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 12px;
+}
+
+.editor{
+    margin: 15px;
+    padding: 0 20px;
+}
+
+.editor-body{
+    font-size: 14px;
+    padding: 0;
+}
+
+.editor-title{
+    padding: 12px 15px;
+    border: none;
+    font-size: 24px;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.90);
+
+}
+
+.editor-hook{
+    padding: 12px 15px;
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.90);
+
+}
+.editor-image{
+    padding: 12px 15px;
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.90);
+
+}
+
+.editor-title:focus{
+    outline:none;
+}
+.editor-hook:focus{
+    outline:none;
+}
+.editor-image:focus{
+    outline:none;
+}
+
+.submit-holder{
+    display:flex;
+    justify-content: space-between;
+}
+
+.article-submit-button {
+        background: #03a87c;
+        font: inherit;
+        /*border is optional*/
+
+        color: white;
+        border: 1px solid #03a87c;
+        cursor: pointer;
+        padding: 5px 16px;
+        font-size: 16px;
+        border-radius: 4px;
+}

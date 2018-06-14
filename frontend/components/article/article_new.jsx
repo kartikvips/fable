@@ -2,14 +2,18 @@ import React from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 
+
 class ArticleNew extends React.Component {
     constructor(props) {
         super(props);
+      
         this.state = {
-            title: '', body: "", user_id: this.props.currentUser.id
+            title: '', body: "", hook: "", img_url: ''
         };
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+       
     }
 
     update(field) {
@@ -19,10 +23,12 @@ class ArticleNew extends React.Component {
             });
         };
     }
-    
+
     handleChange(value) {
         this.setState({ body: value });
     }
+
+    
 
     componentWillUnmount() {
         // if (this.props.errors) {
@@ -31,13 +37,12 @@ class ArticleNew extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        // if (!this.props.currentUser) {
-        //     return <Redirect to='/login' />;
-        // }
-        // const comment = this.state;
-        // this.props.createComment(comment);
-        // this.setState({ body: '' });
+        const article = this.state;
+        debugger;
+        this.props.createArticle({article})
+        .then(
+            () => (<Redirect to = {`/articles/${this.props.articleId}`}/>));
+        this.setState({ body: '', title: '', hook: '', img_url: '' });
     }
 
     // renderErrors() {
@@ -55,53 +60,63 @@ class ArticleNew extends React.Component {
     // }
 
     render() {
-        // let image, name;
-        // if (!this.props.currentUser) {
-        //     return (<div></div>);
-        // } else {
-        //     image = this.props.currentUser.img_url;
-        //     name = `${this.props.currentUser.firstname} ${this.props.currentUser.lastname}`;
-        // }
-        // return (
+       
+        if(!!this.props.currentUser){
+        const user = this.props.currentUser;
+            return(
+                <div className = "editor-main">
+                    <div className = "submit-holder">
+                        <div className='editor-author-info'>
+                            {/* <div className="editor-author-names"> */}
+                                <Link to={`/users/${user.id}`}><img className='editor-user-img' src={user.img_url}/></Link>
+                            {/* </div> */}
+                            <div className='editor-author-name'>
+                                <Link to={`/users/${user.id}`}><p className="editor-username">{user.firstname} {user.lastname}</p></Link>
+                                <p className="editor-draftt">Draft</p>
+                            </div>
+                        </div>
+                        <input className="article-submit-button"
+                            type='submit'
+                            value='Publish'
+                            onClick = {this.handleSubmit}
+                        />
+                    </div>
 
-        //     <div className='comment-form'>
-        //         <div className='comment-author'>
-
-        //             <img className='comment-user-img' src={image} ></img>
-        //             <div className='comment-author-name'>
-        //                 <p className="author-name-com">{name}</p>
-        //             </div>
-        //         </div>
-        //         {/* {this.renderErrors()} */}
-        //         <form className="comment-form-form" onSubmit={this.handleSubmit}>
-        //             <textarea className="comment-textarea"
-        //                 value={this.state.body}
-        //                 onChange={this.update('body')}
-        //             />
-        //             <br />
-        //             <input className="comment-submit"
-        //                 type='submit'
-        //                 value='Publish'
-        //             />
-        //         </form>
-        //     </div>
-
-        // );
-        return(
-            <div className="editor">
-                <input type="text"
-                    value={this.state.title}
-                    onChange={this.update('title')}
-                    className="editor-title"
-                    placeholder="Title"
-                />
-                Hello WORLD!
-                
-                <ReactQuill theme = "bubble" value={this.state.body}
-                    onChange={this.handleChange} />
-            
-            </div>
-        );
+                    <div className="editor">
+                        <input type="text"
+                            value={this.state.title}
+                            onChange={this.update('title')}
+                            className="editor-title"
+                            placeholder="Title"
+                        />
+                        <input type="text"
+                            value={this.state.hook}
+                            onChange={this.update('hook')}
+                            className="editor-hook"
+                            placeholder="Hook"
+                        />
+                        <input type="text"
+                            value={this.state.img_url}
+                            onChange={this.update('img_url')}
+                            className="editor-image"
+                            placeholder="Image URL"
+                        />
+                        
+                        <ReactQuill theme = "bubble" 
+                                    value={this.state.body}
+                                    onChange={this.handleChange} 
+                                    placeholder = "Start your fable"
+                                    className="editor-body"
+                        />
+                    
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <Redirect to='/' />
+            );
+        }
     }
 }
 
