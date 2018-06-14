@@ -182,3 +182,22 @@
     text-decoration: underline;
 }
 
+.article-update-button {
+    height: 37px;
+    width: 81px;
+    padding: 7px 16px;
+    background: none !important;
+    font: inherit;
+    /*border is optional*/
+    color: #03a87c;
+    border: 1px solid #03a87c;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.article-update-button:focus {
+    outline: none;
+    color: #16926E;
+    border: 1px solid #16926E;
+}

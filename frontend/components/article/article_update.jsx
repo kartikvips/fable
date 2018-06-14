@@ -3,17 +3,22 @@ import { Link, withRouter, Redirect } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 
 
-class ArticleNew extends React.Component {
+class ArticleUpdate extends React.Component {
     constructor(props) {
         super(props);
-      
-        this.state = {
-            title: '', body: "", hook: "", img_url: ''
-        };
-        
+        // debugger;
+        this.article = this.props.article;
+        // this.state = {
+        //     title: this.article.title, body: this.article.body, hook: this.article.hook, img_url: this.article.img_url
+        // };
+        if(this.article)
+            this.state = {
+                title: this.article.title, body: this.article.body, hook: this.article.hook, img_url: this.article.img_url
+            };
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-       
+
     }
 
     update(field) {
@@ -24,11 +29,23 @@ class ArticleNew extends React.Component {
         };
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        this.props.getArticle(this.props.match.params.id);
+    }
+
     handleChange(value) {
         this.setState({ body: value });
     }
 
-    
+    componentWillReceiveProps(nextProps){
+        
+        if(this.state.body !== nextProps.article.body){
+            this.setState({body: nextProps.article.body});
+        }
+    }
+
+
 
     componentWillUnmount() {
         // if (this.props.errors) {
@@ -38,10 +55,9 @@ class ArticleNew extends React.Component {
 
     handleSubmit(e) {
         const article = this.state;
-       
-        this.props.createArticle({article})
-        .then(
-            res => this.props.history.push(`/articles/${res.article.id}`));
+        this.props.updateArticle({ article }, parseInt(this.props.match.params.id))
+            .then(
+                res => this.props.history.push(`/articles/${res.article.id}`));
         // this.setState({ body: '', title: '', hook: '', img_url: '' });
     }
 
@@ -60,25 +76,25 @@ class ArticleNew extends React.Component {
     // }
 
     render() {
-       
-        if(!!this.props.currentUser){
-        const user = this.props.currentUser;
-            return(
-                <div className = "editor-main">
-                    <div className = "submit-holder">
+
+        if (!!this.props.currentUser && (this.props.currentUser.id === this.article.user_id)) {
+            const user = this.props.currentUser;
+            return (
+                <div className="editor-main">
+                    <div className="submit-holder">
                         <div className='editor-author-info'>
                             {/* <div className="editor-author-names"> */}
-                                <Link to={`/users/${user.id}`}><img className='editor-user-img' src={user.img_url}/></Link>
+                            <Link to={`/users/${user.id}`}><img className='editor-user-img' src={user.img_url} /></Link>
                             {/* </div> */}
                             <div className='editor-author-name'>
                                 <Link to={`/users/${user.id}`}><p className="editor-username">{user.firstname} {user.lastname}</p></Link>
-                                <p className="editor-draftt">Draft</p>
+                                <p className="editor-draftt">Update</p>
                             </div>
                         </div>
                         <input className="article-submit-button"
                             type='submit'
-                            value='Publish'
-                            onClick = {this.handleSubmit}
+                            value='Update'
+                            onClick={this.handleSubmit}
                         />
                     </div>
 
@@ -101,14 +117,14 @@ class ArticleNew extends React.Component {
                             className="editor-image"
                             placeholder="Image URL"
                         />
-                        
-                        <ReactQuill theme = "bubble" 
-                                    value={this.state.body}
-                                    onChange={this.handleChange} 
-                                    placeholder = "Start your fable"
-                                    className="editor-body"
+
+                        <ReactQuill theme="bubble"
+                            value={this.state.body || ""}
+                            onChange={this.handleChange}
+                            placeholder="Start your fable"
+                            className="editor-body"
                         />
-                    
+
                     </div>
                 </div>
             );
@@ -120,4 +136,4 @@ class ArticleNew extends React.Component {
     }
 }
 
-export default withRouter(ArticleNew);
+export default withRouter(ArticleUpdate);
