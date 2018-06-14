@@ -8,6 +8,12 @@ import { Link } from 'react-router-dom';
 class UserShow extends React.Component {
     constructor(props) {
         super(props);
+        // this.handleUpdate = this.handleUpdate.bind(this);
+
+    }
+
+    handleUpdate(id) {
+        this.props.history.push(`/articles/update/${id}`);
     }
 
     componentDidMount() {
@@ -22,7 +28,7 @@ class UserShow extends React.Component {
     }
 
     render() {
-        // debugger;
+ 
 
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         const monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Octtober", "November", "December"];
@@ -30,17 +36,26 @@ class UserShow extends React.Component {
      
         // if(!!this.props.user && !!this.props.user.articles){
         if(!!this.props.user && !!this.props.user.articles){
+            debugger;
                 const articles = this.props.user.articles.map((article, i) => {
                     return (
                         <div className="profile-article-holder" key={article.id}>
-                            <div className="profile-profile-div">
-                                <Link to={`/users/${this.props.user.id}`}><img className="profile-article-img" src={this.props.user.img_url} />
-                                </Link>
-                                <div className="profile-article-info">
-                                    <Link to={`/users/${this.props.user.id}`}><p className="profile-author">{this.props.user.firstname} {this.props.user.lastname}</p></Link>
+                            <div className="profile-update-cont">
+                                <div className="profile-profile-div">
+                                    <Link to={`/users/${this.props.user.id}`}><img className="profile-article-img" src={this.props.user.img_url} />
+                                    </Link>
+                                    <div className="profile-article-info">
+                                        <Link to={`/users/${this.props.user.id}`}><p className="profile-author">{this.props.user.firstname} {this.props.user.lastname}</p></Link>
 
-                                    <p className="date">{months[article.month - 1]} {article.day}</p>
+                                        <p className="date">{months[article.month - 1]} {article.day}</p>
+                                    </div>
+                            
                                 </div>
+                                <input className="article-update-button"
+                                    type='submit'
+                                    value='Update'
+                                    onClick={this.handleUpdate.bind(this, article.id)}
+                                />
                             </div>
                             <Link to={`/articles/${article.id}`}><img className="profile-article-image" src={article.img_url} />
                             </Link>

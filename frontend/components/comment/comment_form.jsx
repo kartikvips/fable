@@ -32,9 +32,7 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // if (!this.props.currentUser) {
-        //     return <Redirect to='/login' />;
-        // }
+
         const comment = this.state;
         this.props.createComment(comment);
         this.setState({ body: '' });
@@ -79,8 +77,8 @@ class CommentForm extends React.Component {
                             onChange={this.update('body')}
                         /> */}
                     <ReactQuill className ="comment-textarea" theme="bubble" value={this.state.body}
-                        onChange={this.handleChange} />
-                        <br />
+                        onChange={this.handleChange} /> 
+                        <br /> 
                         <input className="comment-submit"
                             type='submit'
                             value='Publish'
