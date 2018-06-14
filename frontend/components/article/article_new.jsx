@@ -38,11 +38,11 @@ class ArticleNew extends React.Component {
 
     handleSubmit(e) {
         const article = this.state;
-        debugger;
+        // debugger;
         this.props.createArticle({article})
         .then(
-            () => (<Redirect to = {`/articles/${this.props.articleId}`}/>));
-        this.setState({ body: '', title: '', hook: '', img_url: '' });
+            res => this.props.history.push(`/articles/${res.article.id}`));
+        // this.setState({ body: '', title: '', hook: '', img_url: '' });
     }
 
     // renderErrors() {

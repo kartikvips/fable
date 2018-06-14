@@ -51,7 +51,13 @@ class ArticleShow extends React.Component {
                             </div>
                         </div>
                         <div className="article-article">
-                            {article.body}
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td dangerouslySetInnerHTML={{ __html: article.body }} />
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div className="comment-form-label">        <span>Responses</span>
                             <div className="comments-div">
@@ -67,63 +73,7 @@ class ArticleShow extends React.Component {
                 </div>
             );
         }
-        
-        // const article = this.props.article;
-        // if (!article) {
-        //     return (<div>Loading...</div>);
-        // } else {
-        //     let edit;
-        //     if (!!this.props.currentUser) {
-        //         edit = this.props.currentUser.id == article.author_id ? <Link className='edit' to={`/api/stories/${article.id}/edit`}>Edit</Link> : null;
-        //     }
-        //     const storyPs = article.body.split('\n').map((p, i) => <p key={i}>{p}</p>);
-        //     const body = () => ({ __html: article.body });
-        //     return (
-        //         <div>
-        //             <article className='article'>
-        //                 <div className='article-user'>
-        //                     <div className='article-avatar'>
-        //                         <img
-        //                             src={article.avatar_url}
-        //                             className='article-avatar-img'
-        //                         ></img>
-        //                     </div>
-        //                     <div className='author-info'>
-        //                         <div className='author-name'>
-        //                             <h5>{article.author_name}</h5>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //                 <div className='section-figure'>
-        //                     <img src={article.image_url} />
-        //                 </div>
-        //                 <div className='article-div'>
-        //                     <section className='section'>
-        //                         <div className='section-content'>
-        //                             <div className='section-title'>
-        //                                 <h1>{article.title}</h1>
-        //                             </div>
-        //                         </div>
-        //                     </section>
-        //                     <section className='section'>
-        //                         <div className='section-content'>
-        //                             <div className='section-inner'>
-        //                                 <div dangerouslySetInnerHTML={body()}>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-        //                     </section>
-        //                 </div>
-        //             </article>
-        //             <div className='comment'>
-        //                 <div className='c-f-div'>
-        //                     <CommentFormContainer />
-        //                     <CommentIndexContainer />
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     );
-        // }
+     
     }
 }
 

@@ -10,7 +10,7 @@ const Header = (props) => {
         if(!!props.currentUser){
             return (
                 <div className="fake-div">
-                    <Link to="/articles/new">Write a fable</Link>
+                    <Link to="/articles/new">New fable</Link>
                 </div>
             );
         } else {
