@@ -56,7 +56,7 @@ class ArticleNew extends React.Component {
     }
 
     renderErrors(errors) {
-        debugger;
+        // debugger;
         return (
             <div className="article-errors">
               {errors}
