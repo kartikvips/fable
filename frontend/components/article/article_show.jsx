@@ -39,7 +39,7 @@ class ArticleShow extends React.Component {
         const article = this.props.article;
         if(!article){
             return (<div>Loading...</div>);
-        }else{
+        } else {
             // debugger;
             const update = () => {
                 if (id === article.user_id) {

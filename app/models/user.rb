@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    include PgSearch
+    multisearchable :against => [:firstname, :lastname]
 
     validates :firstname, :lastname, :email, :password_digest, :img_url, :session_token, presence: true
 

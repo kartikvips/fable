@@ -1,0 +1,72 @@
+.search-body{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.search-box{
+    width: 960px;
+    padding: 0 20px;
+    padding-top: 45px;
+    height: 81px;
+    font-size: 40px;
+    font-family: medium-content-sans-serif-font,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 40px;
+}
+
+.search-box:focus{
+    outline: none;
+}
+
+.article-search-results{
+    width: 710px;
+    padding: 0 20px;
+}
+
+.search-results{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.articles-results{
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 30px; 
+    padding-bottom: 30px;
+}
+
+#search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+    color: gray;
+}
+
+#search:hover{
+    color:black;
+}
+
+.login-signup > a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.header-group > a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

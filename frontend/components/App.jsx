@@ -18,12 +18,14 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import LogInFormContainer from './session_form/login_form_container';
 import Modal from './modal/modal';
 import Header from './header';
+import Search from './search/search';
 
 const App = () => (
     <div>
         <Header />
         <Switch>
             <Route exact path="/" component={IndexContainer} />
+            <Route exact path="/search" component={Search} />
             <Route exact path='/articles/new' component={ArticleNewContainer} />
             <Route exact path='/articles/update/:id' component={ArticleUpdateContainer} />
             <Route exact path='/articles/:id' component={ArticleShowContainer} />
