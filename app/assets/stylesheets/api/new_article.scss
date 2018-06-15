@@ -1,5 +1,6 @@
 .editor-main{
     width: 740px;
+
     margin: auto;
     padding: 20px 0;
     font-family: medium-content-sans-serif-font,
@@ -9,6 +10,7 @@
     Geneva,
     Arial,
     sans-serif !important;
+   
 }
 
 .editor-author-info{
@@ -144,4 +146,16 @@
 
 .article-article a {
     text-decoration: underline;
+}
+
+.article-errors{
+    padding-right: 10px;
+    font-size: 12px;
+    color: red;
+line-height: 40px
+}
+
+.article-errors-div{
+    display:flex;
+
 }

@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
     return {
     currentUser: state.session.currentUser,
-    articleId: keys[keys.length-1]
+    articleId: keys[keys.length-1],
+    errors: state.errors.session
 };
 
 };

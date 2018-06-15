@@ -17,16 +17,9 @@ import { fetchSearchResults} from '../../util/search_api_util';
 //     clearErrors
 // } from '../../actions/session_actions';
 
-const mapStateToProps = (state, props) => {
-    return {
-        comment: null,
-        currentUser: state.session.currentUser
-    };
-};
-
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        createComment: comment => dispatch(createComment(comment))
+        createComment: query => dispatch(createComment(comment))
     };
 };
 

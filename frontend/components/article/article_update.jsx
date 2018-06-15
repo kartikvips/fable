@@ -15,13 +15,16 @@ class ArticleUpdate extends React.Component {
             this.state = {
                 title: this.article.title, body: this.article.body, hook: this.article.hook, img_url: this.article.img_url
             };
-
+        this.errors = "";
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
     }
 
     update(field) {
+        if (this.state.title !== "" && this.state.body !== "" && this.state.hook !== "" && this.state.img_url !== "") {
+            this.errors = "";
+        }
         return e => {
             this.setState({
                 [field]: e.target.value
@@ -35,6 +38,9 @@ class ArticleUpdate extends React.Component {
     }
 
     handleChange(value) {
+        if (this.state.title !== "" && this.state.body !== "" && this.state.hook !== "" && this.state.img_url !== "") {
+            this.errors = "";
+        }
         this.setState({ body: value });
     }
 
@@ -55,12 +61,21 @@ class ArticleUpdate extends React.Component {
 
     handleSubmit(e) {
         const article = this.state;
-        this.props.updateArticle({ article }, parseInt(this.props.match.params.id))
+        this.props.updateArticle({ article })
             .then(
-                res => this.props.history.push(`/articles/${res.article.id}`));
+                (res => this.props.history.push(`/articles/${res.article.id}`)));
+        this.errors = "Article fields cannot be empty.";
+        this.render();
         // this.setState({ body: '', title: '', hook: '', img_url: '' });
     }
-
+    renderErrors(errors) {
+        // debugger;
+        return (
+            <div className="article-errors">
+                {errors}
+            </div>
+        );
+    }
     // renderErrors() {
     //     return (
     //         <ul>
@@ -76,11 +91,12 @@ class ArticleUpdate extends React.Component {
     // }
 
     render() {
-
+        // debugger;
         if (!!this.props.currentUser && (this.props.currentUser.id === this.article.user_id)) {
             const user = this.props.currentUser;
             return (
                 <div className="editor-main">
+                    {/* {this.renderErrors(this.errors)} */}
                     <div className="submit-holder">
                         <div className='editor-author-info'>
                             {/* <div className="editor-author-names"> */}
@@ -91,11 +107,14 @@ class ArticleUpdate extends React.Component {
                                 <p className="editor-draftt">Update</p>
                             </div>
                         </div>
-                        <input className="article-submit-button"
-                            type='submit'
-                            value='Update'
-                            onClick={this.handleSubmit}
-                        />
+                        <div className="article-errors-div">
+                            {this.renderErrors(this.errors)}
+                            <input className="article-submit-button"
+                                type='submit'
+                                value='Update'
+                                onClick={this.handleSubmit}
+                            />
+                        </div>
                     </div>
 
                     <div className="editor">
