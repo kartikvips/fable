@@ -119,7 +119,7 @@ user4 = User.create({firstname: "Jack", lastname: "Parihar", email: "jack@gmail.
 
 # user5 = User.create({firstname: "Captain", lastname: "America", email: "iruntheavengers@marvel.com", password: "ironmanisonlyamortal"})
 
-100.times do |time|
+30.times do |time|
     user = User.create({firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, password: "password", img_url: pics.sample})
 
     user2 = User.create({firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, password: "password", img_url: pics.sample})

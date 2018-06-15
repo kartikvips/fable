@@ -1,24 +1,30 @@
-# README
+# fable
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://fable-one.herokuapp.com/#/)
 
-Things you may want to cover:
+fable is a website that shares stories from the depths of the universe, based on Medium. It uses Rails/PostgreSQL backend with React.js and Redux for the frontend. 
 
-* Ruby version
+Project was built over a ten day period and features will be added in the future. 
 
-* System dependencies
+## Introduction
+* Features
+* Technologies
+* Challenges
+* Snippets
 
-* Configuration
 
-* Database creation
+## Features
+* Login: Secure frontend to backend user authentication using BCrypt
+* Fables: Create and edit their own fables using a Quill-enabled rich text editor
+* Home Page: Updates to show new fables
+* Search: Search query through users and fables 
+* Comments: Post comments in fables 
 
-* Database initialization
+##Technologies
 
-* How to run the test suite
+##Challenges
 
-* Services (job queues, cache servers, search engines, etc.)
+##Snippets
 
-* Deployment instructions
 
-* ...
+
