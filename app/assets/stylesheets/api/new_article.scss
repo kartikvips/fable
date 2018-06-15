@@ -109,6 +109,10 @@
         border-radius: 4px;
 }
 
+.article-submit-button:focus {
+    outline: none;
+}
+
 .article-article {
     // font-size: 16px; 
     margin-top: 20px;

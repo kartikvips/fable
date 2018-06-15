@@ -35,13 +35,13 @@ class UserShow extends React.Component {
 
         // if(!!this.props.user && !!this.props.user.articles){
         if(!!this.props.user && !!this.props.user.articles){
-            debugger;
+            
                 const articles = this.props.user.articles.map((article, i) => {
                     
                     let id = this.props.currentUser ? this.props.currentUser.id : 0;
                     const update = (artId) => {
                         if (id === article.user_id) {
-                            debugger;
+                            
                             return (
                                 <input className="article-update-button"
                                     type='submit'
