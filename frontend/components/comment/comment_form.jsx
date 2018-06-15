@@ -77,7 +77,7 @@ class CommentForm extends React.Component {
                             onChange={this.update('body')}
                         /> */}
                     <ReactQuill className ="comment-textarea" theme="bubble" value={this.state.body}
-                        onChange={this.handleChange} /> 
+                        onChange={this.handleChange} placeholder = "Start your comment"/> 
                         <br /> 
                         <input className="comment-submit"
                             type='submit'
