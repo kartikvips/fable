@@ -160,6 +160,13 @@
     "Times New Roman",
     Times,
     serif;
+    
+}
+
+.comment-body *{
+    width: 598px;
+    display: inline-block;
+    overflow-wrap: break-word;
 }
 
 .comment-body h1{
