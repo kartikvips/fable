@@ -97,5 +97,39 @@ Process of developing backend using Ruby on Rails with PostgreSQL
 * JSON for various frontend requirements 
 * Maintaining sane global state model
 
+## Snippets
+
+Incorporating a multi-model search. 
+
+```ruby
+def index
+       if params[:query].present?
+           @to_search = PgSearch.multisearch(params[:query])
+            
+            @articles = [];
+            @users = [];
+
+           if (@to_search != [])
+
+                @to_search.each do |res|
+                    @articles.push(Article.find(res.searchable_id)) if res.searchable_type == "Article"
+                    @users.push(User.find(res.searchable_id)) if res.searchable_type == "User"
+                end
+               render :index
+           end
+        
+       end
+   end
+```
+
+Dynamically displaying stored Rich Text in React Component
+
+```javascript
+<tbody>
+    <tr>
+       <td dangerouslySetInnerHTML={{ __html: article.body }} />
+    </tr>
+</tbody>
+```
 
 
